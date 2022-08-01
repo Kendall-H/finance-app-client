@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../../shared/components/FormElements/Button";
 
 const Stock = (props) => {
   const value = props.stock.price * props.stock.amount;
@@ -12,6 +13,9 @@ const Stock = (props) => {
       <span>Amount Owned: {props.stock.amount}</span>
       <br />
       <span>Value: ${value.toFixed(2)}</span>
+      <br />
+      <Button to={`/stocks/${props.id}`}>EDIT</Button>
+      <Button danger>DELETE</Button>
     </div>
   );
 };

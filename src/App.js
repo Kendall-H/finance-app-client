@@ -5,6 +5,7 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 import "./App.css";
 import AssetDashboard from "./assets/components/AssetDashboard/AssetDashboard";
@@ -37,21 +38,28 @@ const App = () => {
 
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact>
-          <AssetDashboard cryptoList={cryptoList} stockList={stockList} />
-        </Route>
+      <MainNavigation />
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <AssetDashboard cryptoList={cryptoList} stockList={stockList} />
+          </Route>
 
-        <Route path="/cryptos" exact>
-          <AssetList cryptoList={cryptoList} />
-        </Route>
+          <Route path="/cryptos" exact>
+            <AssetList cryptoList={cryptoList} />
+          </Route>
 
-        <Route path="/stocks">
-          <AssetList stockList={stockList} />
-        </Route>
+          <Route path="/stocks">
+            <AssetList stockList={stockList} />
+          </Route>
 
-        <Redirect to="/" />
-      </Switch>
+          <Route path="/assets">
+            <AssetList stockList={stockList} cryptoList={cryptoList} />
+          </Route>
+
+          <Redirect to="/" />
+        </Switch>
+      </main>
     </Router>
   );
 };
