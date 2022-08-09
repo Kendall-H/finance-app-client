@@ -15,6 +15,9 @@ const NavLinks = (props) => {
         <NavLink to="/assets">My Assets</NavLink>
       </li>
       <li>
+        <NavLink to="/newasset">New Asset</NavLink>
+      </li>
+      <li>
         <NavLink to="/account">Account</NavLink>
       </li>
       <li>

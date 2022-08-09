@@ -10,6 +10,7 @@ import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import "./App.css";
 import AssetDashboard from "./assets/components/AssetDashboard/AssetDashboard";
 import AssetList from "./assets/components/AssetList/AssetList";
+import NewAsset from "./assets/pages/NewAsset";
 
 const App = () => {
   const [cryptoList, setCryptoList] = useState([
@@ -45,7 +46,7 @@ const App = () => {
             <AssetDashboard cryptoList={cryptoList} stockList={stockList} />
           </Route>
 
-          <Route path="/cryptos" exact>
+          <Route path="/cryptos">
             <AssetList cryptoList={cryptoList} />
           </Route>
 
@@ -55,6 +56,10 @@ const App = () => {
 
           <Route path="/assets">
             <AssetList stockList={stockList} cryptoList={cryptoList} />
+          </Route>
+
+          <Route path="/newasset">
+            <NewAsset />
           </Route>
 
           <Redirect to="/" />
